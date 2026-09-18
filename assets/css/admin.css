@@ -1,0 +1,564 @@
+/* Price, Stock & Weight Tracker for WooCommerce — admin styles */
+
+.pswt-wrap {
+    --pswt-border: #dcdcde;
+    --pswt-muted: #646970;
+    --pswt-radius: 8px;
+    --pswt-price: #2271b1;
+    --pswt-stock: #8a5a00;
+    --pswt-title: #5b3ea6;
+    --pswt-weight: #0a7a55;
+    --pswt-up: #00801b;
+    --pswt-down: #b32d2e;
+}
+
+.pswt-wrap .page-title-action {
+    margin-left: 8px;
+}
+
+/* Cards */
+.pswt-card {
+    background: #fff;
+    border: 1px solid var(--pswt-border);
+    border-radius: var(--pswt-radius);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    margin-top: 16px;
+    overflow: hidden;
+}
+
+.pswt-card--padded {
+    padding: 20px 24px;
+}
+
+.pswt-card h2 {
+    font-size: 15px;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pswt-card .description {
+    margin-top: -6px;
+}
+
+/* Stat tiles */
+.pswt-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.pswt-stats--6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.pswt-stat {
+    background: #fff;
+    border: 1px solid var(--pswt-border);
+    border-radius: var(--pswt-radius);
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pswt-stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #1d2327;
+}
+
+.pswt-stat-label {
+    font-size: 12px;
+    color: var(--pswt-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* Tabs */
+.pswt-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 20px;
+    border-bottom: 1px solid var(--pswt-border);
+}
+
+.pswt-tab {
+    padding: 8px 14px;
+    text-decoration: none;
+    color: var(--pswt-muted);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+}
+
+.pswt-tab:hover,
+.pswt-tab:focus {
+    color: #1d2327;
+}
+
+.pswt-tab.is-active {
+    color: #2271b1;
+    border-bottom-color: #2271b1;
+}
+
+.pswt-count {
+    display: inline-block;
+    background: #f0f0f1;
+    color: #50575e;
+    border-radius: 10px;
+    padding: 0 7px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 18px;
+    vertical-align: middle;
+}
+
+.pswt-tab.is-active .pswt-count {
+    background: #e5f0fa;
+    color: #2271b1;
+}
+
+/* Filters */
+.pswt-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.pswt-filters input[type="search"] {
+    min-width: 240px;
+}
+
+.pswt-filters input[type="date"] {
+    line-height: 1.6;
+}
+
+.pswt-filters-sep {
+    color: var(--pswt-muted);
+}
+
+.pswt-reset {
+    margin-left: 4px;
+}
+
+.pswt-quick {
+    display: inline-flex;
+    gap: 12px;
+    margin-left: 8px;
+}
+
+.pswt-quick .is-active {
+    font-weight: 600;
+    text-decoration: none;
+    color: #1d2327;
+}
+
+.pswt-notice {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #f6f7f7;
+    border-left: 4px solid #2271b1;
+    border-radius: 4px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Tables */
+.pswt-card .wp-list-table,
+.pswt-table {
+    border: 0;
+    box-shadow: none;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pswt-card .tablenav {
+    padding: 8px 12px;
+    height: auto;
+}
+
+.pswt-card .tablenav.top {
+    border-bottom: 1px solid var(--pswt-border);
+}
+
+.pswt-card .tablenav.bottom {
+    border-top: 1px solid var(--pswt-border);
+}
+
+.pswt-card .wp-list-table th,
+.pswt-card .wp-list-table td,
+.pswt-table th,
+.pswt-table td {
+    padding: 12px 14px;
+    vertical-align: middle;
+}
+
+.pswt-card .wp-list-table thead th,
+.pswt-card .wp-list-table tfoot th,
+.pswt-table thead th {
+    background: #f6f7f7;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--pswt-muted);
+    text-align: left;
+    border-bottom: 1px solid var(--pswt-border);
+}
+
+.pswt-card .wp-list-table tfoot th {
+    border-top: 1px solid var(--pswt-border);
+    border-bottom: 0;
+}
+
+.pswt-card .wp-list-table tbody tr,
+.pswt-table tbody tr {
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.pswt-card .wp-list-table tbody tr:hover,
+.pswt-table tbody tr:hover {
+    background: #fafbfc;
+}
+
+.pswt-table--compact th,
+.pswt-table--compact td {
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+.pswt-card .wp-list-table .column-change_type,
+.pswt-card .wp-list-table .column-changed_by {
+    width: 13%;
+}
+
+.pswt-card .wp-list-table .column-change_date,
+.pswt-card .wp-list-table .column-last_change {
+    width: 16%;
+}
+
+.pswt-card .wp-list-table .column-current,
+.pswt-card .wp-list-table .column-stock_quantity,
+.pswt-card .wp-list-table .column-total_sales {
+    width: 10%;
+}
+
+.pswt-card .no-items td {
+    padding: 32px 14px;
+    text-align: center;
+    color: var(--pswt-muted);
+}
+
+/* Product cell */
+.pswt-product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pswt-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #f0f0f1;
+}
+
+.pswt-thumb--empty {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #a7aaad;
+    font-size: 20px;
+}
+
+.pswt-product-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.pswt-product-name {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.pswt-product-meta {
+    font-size: 12px;
+    color: var(--pswt-muted);
+}
+
+/* Badges */
+.pswt-badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 18px;
+    white-space: nowrap;
+    background: #f0f0f1;
+    color: #50575e;
+}
+
+.pswt-badge--price {
+    background: #e5f0fa;
+    color: var(--pswt-price);
+}
+
+.pswt-badge--stock {
+    background: #fcf3e0;
+    color: var(--pswt-stock);
+}
+
+.pswt-badge--title {
+    background: #efeaf9;
+    color: var(--pswt-title);
+}
+
+.pswt-badge--weight {
+    background: #e2f5ec;
+    color: var(--pswt-weight);
+}
+
+.pswt-stock {
+    display: inline-block;
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.pswt-stock--instock {
+    background: #e2f5ec;
+    color: var(--pswt-up);
+}
+
+.pswt-stock--outofstock {
+    background: #fbeaea;
+    color: var(--pswt-down);
+}
+
+.pswt-stock--onbackorder {
+    background: #fcf3e0;
+    color: var(--pswt-stock);
+}
+
+/* Change cell */
+.pswt-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.pswt-arrow {
+    color: #a7aaad;
+}
+
+.pswt-delta {
+    display: inline-block;
+    margin-left: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.pswt-delta--up {
+    color: var(--pswt-up);
+}
+
+.pswt-delta--down {
+    color: var(--pswt-down);
+}
+
+.pswt-muted {
+    color: var(--pswt-muted);
+}
+
+/* User cell */
+.pswt-user {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pswt-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.pswt-avatar--system {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f1;
+    color: #8c8f94;
+    font-size: 16px;
+}
+
+/* Chips (report user summary) */
+.pswt-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.pswt-chip {
+    background: #f6f7f7;
+    border: 1px solid var(--pswt-border);
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 12px;
+}
+
+/* Report layout */
+.pswt-report-range {
+    margin: 12px 0 0;
+    font-size: 14px;
+    color: var(--pswt-muted);
+}
+
+.pswt-report-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+}
+
+.pswt-report-grid .pswt-card {
+    margin-top: 16px;
+}
+
+.pswt-report-grid .pswt-product-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 320px;
+}
+
+.pswt-report-grid .column-product,
+.pswt-report-grid .pswt-table th:first-child {
+    width: 34%;
+}
+
+@media screen and (min-width: 1800px) {
+    .pswt-report-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 16px;
+    }
+
+    .pswt-report-wide {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Settings */
+.pswt-checks {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px 20px;
+    margin-top: 12px;
+}
+
+.pswt-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pswt-settings .pswt-card h2 {
+    margin-bottom: 6px;
+}
+
+/* Meta box */
+#pswt_history .inside {
+    padding: 0;
+    margin: 0;
+}
+
+.pswt-meta-footer {
+    margin: 0;
+    padding: 10px 12px;
+    border-top: 1px solid #f0f0f1;
+    color: var(--pswt-muted);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+    .pswt-stats--6 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .pswt-stats,
+    .pswt-stats--6,
+    .pswt-report-grid,
+    .pswt-checks {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pswt-filters input[type="search"] {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .pswt-card .wp-list-table td.column-product {
+        display: block;
+    }
+}
+
+/* Print: only the report content */
+@media print {
+    #adminmenumain,
+    #wpadminbar,
+    #wpfooter,
+    .pswt-no-print,
+    .pswt-print,
+    .notice,
+    .update-nag {
+        display: none !important;
+    }
+
+    #wpcontent,
+    #wpbody-content {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .pswt-wrap {
+        margin: 0;
+    }
+
+    .pswt-report-grid {
+        display: block;
+    }
+
+    .pswt-card,
+    .pswt-stat {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+
+    .pswt-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pswt-thumb {
+        display: none;
+    }
+}
